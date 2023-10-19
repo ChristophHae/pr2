@@ -22,5 +22,16 @@ public class Student {
    */
   public Student(String dataRow) {
     // TODO: Here goes your code ...
+    String[] daten = dataRow.split(",");
+    
+    name = daten[0];
+    registrationNumber = daten[1];
+    courseOfStudies = daten[2];
+    
+    /* 
+    for (String datenEinzeln : daten){
+    
+    }
+    */
   }
 }

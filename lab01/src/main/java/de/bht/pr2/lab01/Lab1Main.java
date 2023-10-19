@@ -49,9 +49,11 @@ public class Lab1Main {
     }
 
     // Print all students which could be parsed
+    /* Noch auskommentiert
     System.out.println("List of Student objects:");
     for (Student student : students) {
       System.out.println(student);
     }
+    */
   }
 }
