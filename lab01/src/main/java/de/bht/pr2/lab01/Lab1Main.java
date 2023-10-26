@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Lab1Main {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws StudentParseException, RegistrationNumberException {
     // Daten fuer Studierenden als Strings
     List<String> data = new ArrayList<String>();
     data.add("Anna Alt,70001,Medieninformatik,312");
@@ -49,11 +49,10 @@ public class Lab1Main {
     }
 
     // Print all students which could be parsed
-    /* Noch auskommentiert
+
     System.out.println("List of Student objects:");
     for (Student student : students) {
       System.out.println(student);
     }
-    */
   }
 }

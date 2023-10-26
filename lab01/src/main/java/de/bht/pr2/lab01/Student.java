@@ -20,13 +20,31 @@ public class Student {
    *
    * @param dataRow a comma-separated row describing a student object
    */
-  public Student(String dataRow) {
+  public Student(String dataRow) throws StudentParseException, RegistrationNumberException {
     // TODO: Here goes your code ...
+
+    boolean Fee_bezahlt;
+
     String[] daten = dataRow.split(",");
     
+    if(daten.length < 3 | daten.length > 3){
+      throw new StudentParseException("Die Datenzeile konnte nicht korrekt gelesen werden ! Überprüfen Sie die Korrektheit der ganzen Zeile");
+    }
+
     name = daten[0];
-    registrationNumber = daten[1];
+    try{
+    registrationNumber = Integer.parseInt(daten[1]);
+    }catch(Exception e){
+      throw new RegistrationNumberException("Die Nummer hat das falsche Format !");
+    }
     courseOfStudies = daten[2];
+
+    if(Integer.parseInt(daten[3]) == 312){
+      Fee_bezahlt = true;
+    }else{
+      Fee_bezahlt = false;
+    }
+    
     
     /* 
     for (String datenEinzeln : daten){
