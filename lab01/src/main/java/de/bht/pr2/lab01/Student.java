@@ -19,25 +19,31 @@ public class Student {
    * This contructor parses a comma-separated row describing a student object.
    *
    * @param dataRow a comma-separated row describing a student object
+   * @throws WrongCourseOfStudiesException
    */
-  public Student(String dataRow) throws StudentParseException, RegistrationNumberException {
+  public Student(String dataRow) throws StudentParseException, RegistrationNumberException, WrongCourseOfStudiesException {
     // TODO: Here goes your code ...
 
     boolean Fee_bezahlt;
 
     String[] daten = dataRow.split(",");
     
-    if(daten.length < 3 | daten.length > 3){
-      throw new StudentParseException("Die Datenzeile konnte nicht korrekt gelesen werden ! Überprüfen Sie die Korrektheit der ganzen Zeile");
+    if(daten.length < 4 | daten.length > 4){
+      throw new StudentParseException("Die Datenzeile konnte nicht korrekt gelesen werden: " + dataRow);
     }
 
     name = daten[0];
     try{
     registrationNumber = Integer.parseInt(daten[1]);
     }catch(Exception e){
-      throw new RegistrationNumberException("Die Nummer hat das falsche Format !");
+      throw new RegistrationNumberException("Die Nummer hat das falsche Format: " + daten[1]);
     }
+    
     courseOfStudies = daten[2];
+    if(courseOfStudies.equalsIgnoreCase("Medieninformatik") | courseOfStudies.equalsIgnoreCase("Technische Informatik") | courseOfStudies.equalsIgnoreCase("Druck- und Medientechnik") | courseOfStudies.equalsIgnoreCase("Screen Based Media")){
+      }else{
+      throw new WrongCourseOfStudiesException("Falscher Studiengang: " + daten[2]);
+    }
 
     if(Integer.parseInt(daten[3]) == 312){
       Fee_bezahlt = true;

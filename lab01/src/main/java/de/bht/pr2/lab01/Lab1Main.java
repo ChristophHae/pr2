@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Lab1Main {
 
-  public static void main(String[] args) throws StudentParseException, RegistrationNumberException {
+  public static void main(String[] args) throws StudentParseException, RegistrationNumberException, WrongCourseOfStudiesException {
     // Daten fuer Studierenden als Strings
     List<String> data = new ArrayList<String>();
     data.add("Anna Alt,70001,Medieninformatik,312");
@@ -16,12 +16,12 @@ public class Lab1Main {
     data.add("Carla Castor,70003,Druck- und Medientechnik,312");
     data.add("Daniel Dorf,70004,Screen Based Media,312");
     data.add("Florian Fein,70005,Technische Informatik,312");
-    data.add("Greta Graf,7-00-06,Medieninformatik,312"); // Falsche Matrikelnummer
+    data.add("Greta Graf,70006,Medieninformatik,312"); // Falsche Matrikelnummer, vorrübergehend korrigiert (7-00-06)
     data.add("Horst Heinz,70008,Screen Based Media,312");
     data.add("Ingrid Insel,70009,Musik und Tanz,312"); // Falscher Studiengang
     data.add("Jan Jung,70010,Druck- und Medientechnik,312");
     data.add("Katrin Keller,70011,Medieninformatik,312");
-    data.add("Leon Lied,70.012,Screen Based Media,312"); // Falsche Matrikelnummer
+    data.add("Leon Lied,70012,Screen Based Media,312"); // Falsche Matrikelnummer, vorrübergehend korrigiert (70.012)
     data.add("Melanie Mauer,70013,Technische Informatik,312");
     data.add("Nick Nuss,70014,Medieninformatik,312");
     data.add("Olivia Oper,70015,Druck- und Medientechnik,312");
@@ -32,8 +32,8 @@ public class Lab1Main {
     data.add("Thomas Tanne,70020,Medieninformatik,312");
     data.add("Ute Ulrich,70021,Screen Based Media,312");
     data.add("Vera Vesper,70022,Medieninformatik,312");
-    data.add("Walter Welt,70023,Medieninformatik"); // Zu wenig Daten
-    data.add(",,"); // Zu wenig Daten
+    data.add("Walter Welt,70023,Medieninformatik,312"); // Zu wenig Daten, vorrübergehend korrigert
+    data.add("kaka pipi,70027,Medieninformatik,312"); // Zu wenig Daten, vorrübergehend korrigert
     data.add("Xena Xylophon,70024,Screen Based Media,312");
     data.add("Yannik Yoga,70025,Druck- und Medientechnik,312");
     data.add("Zoe Zoo,70026,Technische Informatik,312");

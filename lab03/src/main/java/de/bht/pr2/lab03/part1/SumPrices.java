@@ -10,6 +10,7 @@ public class SumPrices {
     Summe Hoerbuch: € 344.58
     Summe Alle:     € 982.28
    */
+  
 
   }
 }
